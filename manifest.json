@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "InstaGuardAI",
+  "version": "2.0.0",
+  "description": "Real-time misinformation detector: Groq AI + NewsAPI + PIB Fact Check + OCR",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.instagram.com/*",
+    "https://api.groq.com/*",
+    "https://newsapi.org/*",
+    "https://pib.gov.in/*",
+    "https://api.allorigins.win/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/overlay.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["src/panel.html", "src/panel.css", "src/panel.js"],
+      "matches": ["https://www.instagram.com/*"]
+    }
+  ]
+}
