@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TruthLens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup">
+    <header class="popup-header">
+      <div class="logo">
+        <div class="logo-icon">TL</div>
+        <div class="logo-text">TruthLens</div>
+      </div>
+      <div class="status-dot" id="statusDot"></div>
+    </header>
+
+    <div class="tagline">Scroll smarter — see the truth before you share.</div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="statScanned">0</div>
+        <div class="stat-label">Scanned</div>
+      </div>
+      <div class="stat-card safe">
+        <div class="stat-value" id="statSafe">0</div>
+        <div class="stat-label">Safe</div>
+      </div>
+      <div class="stat-card verify">
+        <div class="stat-value" id="statVerify">0</div>
+        <div class="stat-label">Verify</div>
+      </div>
+      <div class="stat-card fake">
+        <div class="stat-value" id="statFake">0</div>
+        <div class="stat-label">Flagged</div>
+      </div>
+    </div>
+
+    <div class="toggle-row">
+      <span class="toggle-label">Active on Instagram</span>
+      <label class="toggle">
+        <input type="checkbox" id="activeToggle" checked />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <button class="reports-btn" id="viewReports">View Community Reports</button>
+
+    <footer class="popup-footer">
+      <span>HackSphere 2026</span>
+      <span>·</span>
+      <span>Privacy-first · No data collected</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
